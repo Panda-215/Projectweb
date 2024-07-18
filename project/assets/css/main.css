@@ -490,24 +490,6 @@ h6 {
   transition: 0.9s;
   background-color: #34b7a7;
 }
-.text {
-  border-right: 5px solid;
-  white-space: nowrap;
-  overflow: hidden;
-  animation: typing 2s, cursor .4s step-end infinite alternate;
-}
-
-@keyframes cursor {
-  50% {
-    border-color: transparent;
-  }
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-}
 
 /*--------------------------------------------------------------
 # Global Footer
@@ -1473,7 +1455,42 @@ section,
 .contact .php-email-form button[type=submit]:hover {
   background-color: color-mix(in srgb, var(--accent-color) 90%, white 10%);
 }
-
+.rain{
+  position: absolute;
+  display: flex;
+  top: -100px;
+  z-index: 50;
+}
+.rain span{
+  position: relative;
+  width: 3px;
+  height: 3px;
+  background: rgb(255, 255, 255);
+  opacity: 100%;
+  margin: 0 31px;
+  border-radius: 50%;
+  animation-name: animate;
+  animation-delay: calc(500s/var(--i));
+  animation-duration: calc(3000s/var(--i));
+  animation-iteration-count: infinite;
+  
+}
+@keyframes animate
+{
+0%
+{
+  transform: translateY(0px)scale(1);
+  animation-timing-function: ease-out;
+} 
+50%{
+  transform: translateY(1400px)scale(1);
+  animation-timing-function: ease-out;
+}
+100%{
+  transform: translateY(3800px)scale(1);
+  animation-timing-function: ease-in; 
+}
+}
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
